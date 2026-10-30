@@ -10,17 +10,9 @@ dotenv.config()
 const cors = require('cors');
 const { app, server } = require('./socket/socket');
 const port = process.env.PORT || 8000;
-app.set('trust proxy', 1);
-
-const allowedOrigins = [
-    'http://localhost:5173',
-    'https://chatnest-0tvr.onrender.com'
-];
 app.use(cors({
-    origin: allowedOrigins,
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    origin:"https://chatnest-0tvr.onrender.com",
+    credentials:true
 }));
 
 app.use(express.json());
