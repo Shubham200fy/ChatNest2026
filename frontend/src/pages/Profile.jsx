@@ -5,7 +5,7 @@ import axios from "axios";
 import { setUserData } from "../redux/userSlice";
 import { toast } from "react-toastify";
 
-const API_URL = "http://localhost:3000/api";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Profile = () => {
     const navigate = useNavigate();
@@ -77,7 +77,7 @@ const Profile = () => {
             }
 
             const res = await axios.put(
-                "http://localhost:3000/api/user/profile",
+                `${API_URL}/api/user/profile`,
                 formData,
                 {
                     withCredentials: true,
@@ -123,7 +123,7 @@ const Profile = () => {
     const handleLogout = async () => {
         try {
           // Change this URL if your logout route uses a different path.
-          await axios.get(`${API_URL}/auth/logout`, {
+          await axios.get(`${API_URL}api/auth/logout`, {
             withCredentials: true,
           });
           dispatch(setUserData(null));

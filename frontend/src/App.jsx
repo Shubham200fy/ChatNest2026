@@ -11,6 +11,7 @@ import Profile from "./pages/Profile";
 import getCurrentUser from "./customHooks/getCurrentUser";
 import getOtherUsers from "./customHooks/getOtherUsers";
 import { setOnlineUsers, setSocket } from "./redux/userSlice";
+const api_url = import.meta.env.VITE_API_URL;
 
 const App = () => {
   getCurrentUser();
@@ -21,7 +22,7 @@ const App = () => {
   useEffect(() => {
     // Wait until the logged-in user's ID is available
     if (userData) {
-      const socketio = io("http://localhost:3000", {
+      const socketio = io(`${api_url}`, {
         query: {
           userId: userData._id,
         },
