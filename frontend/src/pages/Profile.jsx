@@ -123,7 +123,7 @@ const Profile = () => {
     const handleLogout = async () => {
         try {
           // Change this URL if your logout route uses a different path.
-          await axios.get(`${API_URL}api/auth/logout`, {
+          await axios.get(`${API_URL}/api/auth/logout`, {
             withCredentials: true,
           });
           dispatch(setUserData(null));
