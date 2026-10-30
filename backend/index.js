@@ -11,7 +11,7 @@ const cors = require('cors');
 const { app, server } = require('./socket/socket');
 const port = process.env.PORT || 8000;
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:"https://chatnest-0tvr.onrender.com",
     credentials:true
 }));
 app.use(express.json());
