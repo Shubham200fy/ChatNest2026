@@ -4,11 +4,23 @@ const app = express()
 const {Server} = require('socket.io')
 
 const server = http.createServer(app)
-const io = new Server(server,{
-    cors:{
-        origin:"https://chatnest-0tvr.onrender.com"
+// const io = new Server(server,{
+//     cors:{
+//         origin:"https://chatnest-0tvr.onrender.com"
+//     }
+// })
+const allowedOrigins = [
+    'http://localhost:5173',
+    'https://chatnest-0tvr.onrender.com'
+];
+
+const io = new Server(server, {
+    cors: {
+        origin: allowedOrigins,
+        credentials: true,
+        methods: ['GET', 'POST']
     }
-})
+});
 const userSocketMap = {}
 const getReceiverSocketId = (receiver) => {
     return userSocketMap[receiver]

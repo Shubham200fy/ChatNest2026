@@ -25,7 +25,8 @@ const signUp = async(req, res) => {
             httpOnly:true,
             maxAge:7*24*60*60*1000,
             sameSite:"none",
-            secure:true
+            secure:true,
+            path: '/'
         })
         return res.status(201).json({user})
     } catch (err) {
@@ -50,7 +51,8 @@ const login = async(req, res) => {
             httpOnly:true,
             maxAge:7*24*60*60*1000,
             sameSite:"none",
-            secure:true
+            secure:true,
+            path: '/'
         })
         return res.status(201).json({user})
     } catch (err) {
