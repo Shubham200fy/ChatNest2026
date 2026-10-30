@@ -14,7 +14,7 @@ import axios from "axios"
 const apiUrl = import.meta.env.VITE_API_URL;
 import { setMessages } from "../redux/messageSlice"
 import RecieverMessage from "./RecieverMessage";
-import SenderMessage from "./senderMessage";
+import SenderMessage from "./SenderMessage"
 
 const MessageArea = () => {
   const messagesEndRef = useRef(null);
