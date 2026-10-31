@@ -20,7 +20,7 @@ const MessageArea = () => {
   const messagesEndRef = useRef(null);
   const dispatch = useDispatch();
   let [showPicker, setShowPicker] = useState(false)
-  const { selectedUser, userData, socket } = useSelector((state) => state.user);
+  const { selectedUser, userData, socket, onlineUsers } = useSelector((state) => state.user);
   const { messages } = useSelector(state => state.message)
   console.log("messages", messages)
   let [input, setInput] = useState("")
@@ -129,7 +129,7 @@ const MessageArea = () => {
             </h2>
 
             <p className="text-xs text-emerald-600">
-              ChatNest
+              {onlineUsers?.include(selectedUser._id)? "Online":"Offline"}
             </p>
           </div>
         </div>

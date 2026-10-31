@@ -153,7 +153,7 @@ const SideBar = () => {
           <h4 className="truncate text-sm font-semibold text-slate-800">
             {userData?.name || userData?.userName || "My Profile"}
           </h4>
-          <p className="text-xs text-emerald-600">Available</p>
+          <p className="text-xs text-emerald-600">Online</p>
         </div>
       </div>
     </aside>
