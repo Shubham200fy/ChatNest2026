@@ -8,7 +8,7 @@ const userSlice = createSlice({
         otherUsers:null,
         selectedUser:null,
         socket:null,
-        onlineUsers:null,
+        onlineUsers:[],
         searchData:null
     },
     reducers:{

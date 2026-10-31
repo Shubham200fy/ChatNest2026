@@ -129,7 +129,7 @@ const MessageArea = () => {
             </h2>
 
             <p className="text-xs text-emerald-600">
-              {onlineUsers?.include(selectedUser._id)? "Online":"Offline"}
+              {onlineUsers?.includes(selectedUser._id)? "Online":"Offline"}
             </p>
           </div>
         </div>
