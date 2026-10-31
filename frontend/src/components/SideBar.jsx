@@ -104,7 +104,7 @@ const SideBar = () => {
           Recent chats
         </h3>
 
-        {otherUsers.map((user) => (
+        {otherUsers?.map((user) => (
 
           <button
             key={user._id}
@@ -133,7 +133,7 @@ const SideBar = () => {
 
         ))}
 
-        {otherUsers.length === 0 && (
+        {otherUsers?.length === 0 && (
           <p className="px-4 py-8 text-center text-sm text-slate-400">
             No friends found
           </p>
