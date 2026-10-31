@@ -60,14 +60,27 @@ const login = async(req, res) => {
     }
 }
 
- const logOut = async(req, res) => {
+ const logOut = async (req, res) => {
     try {
-        res.clearCookie('token');
-        return res.status(200).json({ message: 'user logout successfully'})
+        res.clearCookie("token", {
+            httpOnly: true,
+            sameSite: "none",
+            secure: true,
+            path: "/"
+        });
+
+        return res.status(200).json({
+            success: true,
+            message: "User logout successfully"
+        });
+
     } catch (err) {
-        res.status(500).json({ message: err.message })
+        return res.status(500).json({
+            success: false,
+            message: err.message
+        });
     }
-}
+};
 
 module.exports = {
     signUp,
